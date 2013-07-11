@@ -309,7 +309,7 @@ FeedParser.prototype.handleError = function (next, e){
     next();
   } else {
     ['opentag', 'closetag', 'text', 'cdata', 'end'].forEach(function(ev){
-      this.stream && this.stream.removeAllListeners(ev);
+      this.stream && this.stream.removeAllListeners && this.stream.removeAllListeners(ev);
     });
     this.handleEnd();
   }
